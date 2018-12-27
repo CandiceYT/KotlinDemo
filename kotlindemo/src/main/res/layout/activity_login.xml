@@ -1,47 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white"
-    tools:context=".login.LoginActivity">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_color"
+        tools:context=".login.LoginActivity">
 
     <android.support.v7.widget.AppCompatTextView
-        android:text="LoginActivity"
-        android:textSize="18sp"
-        android:textColor="#000000"
-        android:id="@+id/tv_login_title"
-        android:gravity="center_vertical"
-        android:paddingLeft="10dp"
-        android:background="@color/colorPrimary"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"/>
+            android:text="LoginActivity"
+            android:textSize="@dimen/textsize_18"
+            android:textColor="@color/black_color"
+            android:id="@+id/tv_login_title"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/space_size_10"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_size_40"/>
 
     <RadioGroup
-        android:padding="5dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_login_title"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+            android:id="@+id/rg_group"
+            android:padding="@dimen/space_size_5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_login_title"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
 
         <RadioButton
-            android:checked="true"
-            android:text="密码登录"
-            android:layout_weight="1"
-
-            android:id="@+id/rbtn_password_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+                android:checked="true"
+                android:text="@string/login_password"
+                android:layout_weight="1"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:id="@+id/rbtn_password_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
         <RadioButton
-            android:id="@+id/rbtn_check_code_login"
-            android:layout_weight="1"
-            android:text="验证码登录"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+                android:id="@+id/rbtn_check_code_login"
+                android:layout_weight="1"
+                android:text="@string/login_check_code"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
     </RadioGroup>
+
+    <android.support.v7.widget.AppCompatTextView
+            android:paddingLeft="@dimen/space_size_10"
+            android:textColor="#000000"
+            android:paddingTop="@dimen/space_size_20"
+            android:paddingBottom="@dimen/space_size_20"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rg_group"
+            android:text="@string/login_phone_num"
+            android:textSize="@dimen/textsize_15"
+            android:id="@+id/tv_phone_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <android.support.v7.widget.AppCompatEditText
+            app:layout_constraintLeft_toRightOf="@id/tv_phone_num"
+            app:layout_constraintTop_toBottomOf="@id/rg_group"
+            android:singleLine="true"
+            android:maxLength="11"
+            android:inputType="phone"
+            android:hint="@string/login_phone_num_hint"
+            android:paddingTop="@dimen/space_size_10"
+            android:paddingBottom="@dimen/space_size_10"
+            android:focusable="true"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintBottom_toBottomOf="@id/tv_phone_num"
+            app:layout_constraintTop_toTopOf="@id/tv_phone_num"
+            android:id="@+id/et_phone_num"
+            android:background="@drawable/edit_shape_bg"
+            android:textSize="@dimen/textsize_15"
+            android:layout_width="@dimen/space_size_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_size_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingLeft="@dimen/space_size_3"
+            app:layout_constraintStart_toEndOf="@+id/tv_phone_num"
+            android:layout_marginStart="@dimen/space_size_5"/>
+
+
+    <android.support.v7.widget.AppCompatTextView
+            android:paddingLeft="@dimen/space_size_10"
+            android:textColor="@color/black_color"
+            android:paddingTop="@dimen/space_size_20"
+            android:paddingBottom="@dimen/space_size_20"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_phone_num"
+            android:text="@string/login_password_notice"
+            android:textSize="@dimen/textsize_15"
+            android:id="@+id/tv_login_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <android.support.v7.widget.AppCompatEditText
+            app:layout_constraintTop_toTopOf="@id/tv_login_password"
+            app:layout_constraintLeft_toRightOf="@id/tv_login_password"
+            app:layout_constraintTop_toBottomOf="@id/et_phone_num"
+            android:singleLine="true"
+            android:maxLength="11"
+            android:inputType="phone"
+            android:hint="@string/login_password_hint"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginTop="@dimen/space_size_10"
+            android:paddingTop="@dimen/space_size_10"
+            android:paddingBottom="@dimen/space_size_10"
+            android:id="@+id/et_login_password"
+            android:background="@drawable/edit_shape_bg"
+            android:textSize="@dimen/textsize_15"
+            android:layout_width="@dimen/space_size_0"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/space_size_3"
+            app:layout_constraintStart_toEndOf="@id/tv_login_password"
+            app:layout_constraintEnd_toStartOf="@id/btn_forget_password"
+            android:layout_marginEnd="@dimen/space_size_5"
+            android:layout_marginStart="@dimen/space_size_5"/>
+
+    <android.support.v7.widget.AppCompatButton
+            android:layout_marginRight="@dimen/space_size_10"
+            android:layout_marginLeft="@dimen/space_size_5"
+            android:text="@string/login_forget_password"
+            android:background="@drawable/btn_croner_d6d7d7_bg"
+            app:layout_constraintBottom_toBottomOf="@id/et_login_password"
+            app:layout_constraintTop_toTopOf="@id/et_login_password"
+            app:layout_constraintTop_toBottomOf="@id/et_phone_num"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/btn_forget_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/ck_box"
+            android:layout_marginTop="@dimen/space_size_15"
+            android:text="@string/login_remember_password"
+            android:textColor="@color/text_normal_color"
+            android:textSize="@dimen/textsize_13"
+            app:theme="@style/check_style"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_login_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_size_10"/>
+
+    <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_login"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/space_size_30"
+            android:text="@string/login_login"
+            android:textSize="@dimen/textsize_18"
+            android:padding="@dimen/space_size_15"
+            app:layout_constraintTop_toBottomOf="@id/ck_box"
+            android:layout_marginLeft="@dimen/space_size_10"
+            android:layout_marginRight="@dimen/space_size_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
 
 </android.support.constraint.ConstraintLayout>

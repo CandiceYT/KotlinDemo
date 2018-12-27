@@ -1,8 +1,6 @@
 package com.candice.kotlindemo
 
 import android.content.Context
-import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
@@ -11,35 +9,46 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import com.candice.kotlindemo.base.BaseActivity
 import com.candice.kotlindemo.login.LoginActivity
 import com.candice.kotlindemo.widget.LinearItemDecoration
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.longToast
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
+	private val tag ="MainActivity"
+	override fun getLayoutId(): Int {
+		return R.layout.activity_main
+	}
+
+	override fun initAction() {
+	}
+
+	override fun loadData() {
+	}
 
 	var data = mutableListOf<String>()
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_main)
-		initData()
-		longToast("data的大小${data.size}")
-		Log.i("TAG", "data的大小${data.size}")
-		initView()
-	}
+
 
 	private val max: Int = 6
 
-	private fun initData() {
+	override fun initData() {
+		Log.i(tag,"initData()")
 		for (i in 0 .. max) {
 			data.add("btn$i")
 		}
 	}
 
 
-	private fun initView() {
-		val layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
+	override fun initView() {
+		val layoutManager = object :LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false){
+			override fun canScrollVertically(): Boolean {
+				return super.canScrollVertically()
+			}
 
+			override fun canScrollHorizontally(): Boolean {
+				return super.canScrollHorizontally()
+			}
+		}
 		val itemDecoration = LinearItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL, R.drawable.divider_shape, true)
 		rv_list.addItemDecoration(itemDecoration)
 		rv_list.layoutManager = layoutManager
@@ -64,7 +73,9 @@ class RVAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder
 			p0.tvItem.setOnClickListener {
 				when (p1) {
 					0 -> LoginActivity.launch(mContext)
+					1 -> Person("Alice","12").printLog()
 					else -> Toast.makeText(mContext, "不做跳转", Toast.LENGTH_LONG).show()
+
 				}
 
 			}

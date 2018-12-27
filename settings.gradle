@@ -1,1 +1,1 @@
-include ':kotlindemo'
+include ':kotlindemo', ':recydemo'

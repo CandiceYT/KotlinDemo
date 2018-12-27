@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--间距-->
+    <dimen name="space_size_0">0dp</dimen>
+    <dimen name="space_size_3">3dp</dimen>
+    <dimen name="space_size_5">5dp</dimen>
+    <dimen name="space_size_15">15dp</dimen>
+    <dimen name="space_size_10">10dp</dimen>
+    <dimen name="space_size_20">20dp</dimen>
+    <dimen name="space_size_30">30dp</dimen>
+    <dimen name="space_size_40">40dp</dimen>
+
+    <dimen name="border_corner_radius">0.5dp</dimen>
+
+
+
+
+
+
+    <!--文本大小-->
+    <dimen name="textsize_13">13sp</dimen>
+    <dimen name="textsize_15">15sp</dimen>
+    <dimen name="textsize_18">18sp</dimen>
+    <dimen name="space_size_1">1dp</dimen>
+
+
+</resources>
