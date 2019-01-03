@@ -4,6 +4,7 @@ import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -56,7 +57,16 @@ class MainActivity : BaseActivity() {
 		rv_list.adapter = mAdapter
 		mAdapter.setData(data)
 	}
+
+	override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+		if (keyCode==KeyEvent.KEYCODE_BACK){
+
+		}
+		return super.onKeyDown(keyCode, event)
+	}
 }
+
+
 
 class RVAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
