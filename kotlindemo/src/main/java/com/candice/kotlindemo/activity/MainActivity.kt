@@ -1,4 +1,4 @@
-package com.candice.kotlindemo
+package com.candice.kotlindemo.activity
 
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
@@ -10,8 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import com.candice.kotlindemo.Person
+import com.candice.kotlindemo.R
 import com.candice.kotlindemo.base.BaseActivity
-import com.candice.kotlindemo.login.LoginActivity
+import com.candice.kotlindemo.activity.login.LoginActivity
 import com.candice.kotlindemo.widget.LinearItemDecoration
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -50,7 +52,8 @@ class MainActivity : BaseActivity() {
 				return super.canScrollHorizontally()
 			}
 		}
-		val itemDecoration = LinearItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL, R.drawable.divider_shape, true)
+		val itemDecoration = LinearItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL,
+			R.drawable.divider_shape, true)
 		rv_list.addItemDecoration(itemDecoration)
 		rv_list.layoutManager = layoutManager
 		val mAdapter = RVAdapter(this@MainActivity)
@@ -83,7 +86,7 @@ class RVAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder
 			p0.tvItem.setOnClickListener {
 				when (p1) {
 					0 -> LoginActivity.launch(mContext)
-					1 -> Person("Alice","12").printLog()
+					1 -> Person("Alice", "12").printLog()
 					else -> Toast.makeText(mContext, "不做跳转", Toast.LENGTH_LONG).show()
 
 				}

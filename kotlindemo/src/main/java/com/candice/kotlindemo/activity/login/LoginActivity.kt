@@ -1,4 +1,4 @@
-package com.candice.kotlindemo.login
+package com.candice.kotlindemo.activity.login
 
 import android.content.Context
 import android.content.Intent
