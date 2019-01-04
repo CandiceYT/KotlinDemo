@@ -10,10 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import com.candice.kotlindemo.Person
 import com.candice.kotlindemo.R
-import com.candice.kotlindemo.base.BaseActivity
+import com.candice.kotlindemo.activity.complicatedwidget.ViewListActivity
 import com.candice.kotlindemo.activity.login.LoginActivity
+import com.candice.kotlindemo.base.BaseActivity
 import com.candice.kotlindemo.widget.LinearItemDecoration
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -85,8 +85,10 @@ class RVAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder
 			p0.tvItem.text = content
 			p0.tvItem.setOnClickListener {
 				when (p1) {
+					//登录页面
 					0 -> LoginActivity.launch(mContext)
-					1 -> Person("Alice", "12").printLog()
+					//视图列表
+					1 -> ViewListActivity.launch(mContext)
 					else -> Toast.makeText(mContext, "不做跳转", Toast.LENGTH_LONG).show()
 
 				}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:padding="@dimen/space_size_10"
+            android:textColor="@color/text_normal_color"
+            android:textSize="@dimen/textsize_15"
+            android:text="测试"
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
