@@ -16,6 +16,7 @@ import com.candice.kotlindemo.activity.login.LoginActivity
 import com.candice.kotlindemo.base.BaseActivity
 import com.candice.kotlindemo.widget.LinearItemDecoration
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.alert
 
 class MainActivity : BaseActivity() {
 	private val tag ="MainActivity"
@@ -24,6 +25,17 @@ class MainActivity : BaseActivity() {
 	}
 
 	override fun initAction() {
+		tv_title.setOnClickListener {
+			alert("您确定要退出系统吗？","提示"){
+				positiveButton("确定"){
+					System.exit(0)
+					dismiss()
+				}
+				negativeButton("取消"){
+					dismiss()
+				}
+			}.show()
+		}
 	}
 
 	override fun loadData() {

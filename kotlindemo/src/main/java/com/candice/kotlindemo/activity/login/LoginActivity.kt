@@ -75,6 +75,11 @@ class LoginActivity : BaseActivity() {
                 }.show()
             }
         }
+
+
+        tv_login_title.setOnClickListener {
+            finish()
+        }
     }
 
 

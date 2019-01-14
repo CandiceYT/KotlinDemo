@@ -9,15 +9,16 @@
         tools:context=".activity.login.LoginActivity">
 
     <android.support.v7.widget.AppCompatTextView
+            android:drawableLeft="@drawable/icon_back_arrow"
             android:text="LoginActivity"
-            android:textSize="@dimen/textsize_18"
-            android:textColor="@color/black_color"
+            android:textSize="@dimen/textsize_20"
+            android:textColor="@color/white_color"
             android:id="@+id/tv_login_title"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/space_size_10"
             android:background="@color/colorPrimary"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/space_size_40"/>
+            android:layout_height="@dimen/space_size_50"/>
 
     <RadioGroup
             android:id="@+id/rg_group"

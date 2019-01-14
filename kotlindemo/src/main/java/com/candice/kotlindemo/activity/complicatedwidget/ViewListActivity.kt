@@ -28,6 +28,9 @@ class ViewListActivity : BaseActivity() {
     }
 
     override fun initAction() {
+        tv_view_title.setOnClickListener {
+            finish()
+        }
     }
 
     override fun loadData() {
@@ -44,11 +47,13 @@ class ViewListActivity : BaseActivity() {
 
     private fun ankoSpinner() {
         val list = listOf("金星", "木星", "水星", "火星", "土星")
-        tv_anko_spinner.text = list[0]
-        tv_anko_spinner.setOnClickListener {
-            selector("请选择行星", list) {
-                    it -> tv_anko_spinner.text = list[it]
-                toast("您选择的是：${list[it]}")
+        with(tv_anko_spinner) {
+            text = list[0]
+            setOnClickListener {
+                selector("请选择行星", list) { it ->
+                    tv_anko_spinner.text = list[it]
+                    toast("您选择的是：${list[it]}")
+                }
             }
         }
 
