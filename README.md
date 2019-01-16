@@ -9,9 +9,9 @@
 ### 2.复杂控件
 - 视图排列 Spinner、ListView、GridView、RecyclerView的使用-----btn1
 
-  - Spinner 原生用法和使用anko库的用法
-
-  - ListView
+  - Spinner：原生用法和使用anko库的用法
+  - ListView：
+  - GridView：
 
 - Material Design的使用
 

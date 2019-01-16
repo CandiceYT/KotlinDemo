@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/space_size_15"
+        android:paddingRight="@dimen/space_size_15"
+        android:paddingTop="@dimen/space_size_15" android:layout_height="wrap_content">
+
+
+
+    <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/iv_icon"
+            android:src="@drawable/icon1"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <android.support.v7.widget.AppCompatTextView
+            tools:text="行星"
+            android:textSize="@dimen/textsize_18"
+            android:textColor="@color/text_normal_color"
+            app:layout_constraintStart_toEndOf="@id/iv_icon"
+            android:paddingTop="@dimen/space_size_5"
+            android:layout_width="wrap_content"
+            android:id="@+id/tv_star_name"
+            android:layout_marginStart="@dimen/space_size_5"
+            android:layout_height="wrap_content"/>
+
+    <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_star_desc"
+            tools:text="描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述"
+            app:layout_constraintTop_toBottomOf="@id/tv_star_name"
+            app:layout_constraintLeft_toRightOf="@id/iv_icon"
+            android:textColor="@color/color_666666"
+            android:layout_width="0dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/space_size_10"
+            android:layout_marginLeft="@dimen/space_size_5"
+            android:textSize="@dimen/textsize_13"
+            android:layout_height="wrap_content"/>
+    <View
+            android:layout_marginTop="@dimen/space_size_15"
+            android:id="@+id/view_top_divider"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_icon"
+            android:background="@color/divider_color"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/border_corner_radius">
+    </View>
+
+
+</android.support.constraint.ConstraintLayout>

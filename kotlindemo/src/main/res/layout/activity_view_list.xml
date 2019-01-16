@@ -28,7 +28,7 @@
             android:spinnerMode="dialog"
             android:layout_height="wrap_content"></Spinner>
 
-<!--使用anko实现Spinner-->
+    <!--使用anko实现Spinner-->
     <TextView
             android:background="@color/colorPrimary"
             android:gravity="center"
@@ -40,5 +40,26 @@
             android:id="@+id/tv_anko_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+    <View
+            android:id="@+id/view_top_divider"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_anko_spinner"
+            android:background="@color/divider_color"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/border_corner_radius">
+    </View>
+
+    <ListView
+            android:background="@color/white_color"
+            android:layout_marginTop="10dp"
+            android:divider="@null"
+            android:dividerHeight="@dimen/space_size_0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_anko_spinner"
+            android:id="@+id/lv_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ListView>
 
 </android.support.constraint.ConstraintLayout>

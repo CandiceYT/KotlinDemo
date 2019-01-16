@@ -6,7 +6,14 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.candice.kotlindemo.R
+import com.candice.kotlindemo.adapter.CommonAdapter
 import com.candice.kotlindemo.base.BaseActivity
+import com.candice.kotlindemo.bean.Star
+import com.candice.kotlindemo.bean.StarBean
+import com.candice.kotlindemo.util.GsonUtil
+import com.candice.kotlindemo.util.LogUtils
+import com.candice.kotlindemo.util.STATUS
+import com.candice.kotlindemo.util.getDataFromAssets
 import kotlinx.android.synthetic.main.activity_view_list.*
 import org.jetbrains.anko.selector
 import org.jetbrains.anko.toast
@@ -17,11 +24,12 @@ import org.jetbrains.anko.toast
  * @desc 视图排列
  * @author lei
  * @date 2019/1/4 下午3:14
- * @version ent_2.0
+ * @version
  * <br>
  * <br>
  */
 class ViewListActivity : BaseActivity() {
+    private val tag ="ViewListActivity"
     val array = arrayOf("金星", "木星", "水星", "火星", "土星")
     override fun getLayoutId(): Int {
         return R.layout.activity_view_list
@@ -34,14 +42,30 @@ class ViewListActivity : BaseActivity() {
     }
 
     override fun loadData() {
+
     }
 
     override fun initView() {
         //Spinner的普通用法
         normalSpinner()
         //ankoSpinner用法
-        ankoSpinner();
+        ankoSpinner()
+        //listView
+        initListView()
 
+
+    }
+    /**
+     * ListView简单使用
+     * @author lei
+     * @date   2019/1/16 下午2:32
+     * @return
+     * @since
+     */
+    private fun initListView() {
+        val commonAdapter = CommonAdapter(this@ViewListActivity)
+        lv_list.adapter = commonAdapter
+        commonAdapter.setData(getStarList())
 
     }
 
@@ -79,7 +103,19 @@ class ViewListActivity : BaseActivity() {
 
 
     override fun initData() {
+    }
 
+    private fun getStarList() :List<Star>{
+        var starList:List<Star>? =null
+        val data = "starlist.json".getDataFromAssets(this)
+        LogUtils.eTag(tag, "data==>$data")
+        //        val starBean = Gson().fromJson(data, StarBean::class.java)
+        val bean: StarBean = GsonUtil.jsonToBean(data, StarBean::class.java)
+        if (bean.status == STATUS) {
+             starList = bean.starList
+            LogUtils.eTag(tag,"starList的大小==${starList.size}")
+        }
+        return starList!!
     }
 
 
