@@ -52,9 +52,25 @@ class ViewListActivity : BaseActivity() {
         ankoSpinner()
         //listView
         initListView()
+        //GridView
+        initGridView()
 
 
     }
+
+    /**
+     * GridView简单使用
+     * @author lei
+     * @date   2019/1/21 下午5:34
+     * @return
+     * @since
+     */
+    private fun initGridView() {
+        val commonAdapter = CommonAdapter(this@ViewListActivity)
+        gv_list.adapter = commonAdapter
+        commonAdapter.setData(getStarList())
+    }
+
     /**
      * ListView简单使用
      * @author lei
@@ -109,7 +125,6 @@ class ViewListActivity : BaseActivity() {
         var starList:List<Star>? =null
         val data = "starlist.json".getDataFromAssets(this)
         LogUtils.eTag(tag, "data==>$data")
-        //        val starBean = Gson().fromJson(data, StarBean::class.java)
         val bean: StarBean = GsonUtil.jsonToBean(data, StarBean::class.java)
         if (bean.status == STATUS) {
              starList = bean.starList

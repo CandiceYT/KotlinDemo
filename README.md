@@ -10,8 +10,8 @@
 - 视图排列 Spinner、ListView、GridView、RecyclerView的使用-----btn1
 
   - Spinner：原生用法和使用anko库的用法
-  - ListView：
-  - GridView：
+  - ListView：和Java区别不大
+  - GridView：和Java区别不大
 
 - Material Design的使用
 
