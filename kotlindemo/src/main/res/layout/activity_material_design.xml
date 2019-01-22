@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:id="@+id/cl_root"
+        android:layout_height="match_parent"
+        tools:context=".activity.complicatedwidget.MaterialDesignActivity">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/ll_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <Button
+                android:id="@+id/btn_snackbar"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/space_size_30"
+                android:textColor="@color/text_normal_color"
+                android:text="显示简单提示条"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/textsize_17"
+                android:layout_height="wrap_content"/>
+
+        <Button
+                android:id="@+id/btn_float_button"
+                android:text="隐藏悬浮按钮"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/space_size_30"
+                android:textColor="@color/text_normal_color"
+                android:textSize="@dimen/textsize_17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+            android:layout_margin="@dimen/space_size_20"
+            app:layout_anchor="@id/ll_root"
+            app:layout_anchorGravity="bottom|right"
+            android:id="@+id/fab_btn"
+            android:layout_width="@dimen/space_size_80"
+            android:layout_height="@dimen/space_size_80"/>
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -25,4 +25,6 @@
     <dimen name="textsize_18">18sp</dimen>
     <dimen name="textsize_20">20sp</dimen>
     <dimen name="space_size_1">1dp</dimen>
+    <dimen name="textsize_17">17sp</dimen>
+    <dimen name="space_size_80">80dp</dimen>
 </resources>

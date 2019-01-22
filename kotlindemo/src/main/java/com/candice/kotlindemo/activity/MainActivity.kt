@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import com.candice.kotlindemo.R
+import com.candice.kotlindemo.activity.complicatedwidget.MaterialDesignActivity
 import com.candice.kotlindemo.activity.complicatedwidget.ViewListActivity
 import com.candice.kotlindemo.activity.login.LoginActivity
 import com.candice.kotlindemo.base.BaseActivity
@@ -101,6 +102,7 @@ class RVAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder
 					0 -> LoginActivity.launch(mContext)
 					//视图列表
 					1 -> ViewListActivity.launch(mContext)
+					2 -> MaterialDesignActivity.launch(mContext)
 					else -> Toast.makeText(mContext, "不做跳转", Toast.LENGTH_LONG).show()
 
 				}

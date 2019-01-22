@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".activity.complicatedwidget.ViewListActivity">
         </activity>
+        <activity android:name=".activity.complicatedwidget.MaterialDesignActivity">
+        </activity>
     </application>
 
 </manifest>
