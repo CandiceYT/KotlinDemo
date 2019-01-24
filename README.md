@@ -12,6 +12,11 @@
   - Spinner：原生用法和使用anko库的用法
   - ListView：和Java区别不大
   - GridView：和Java区别不大
+- Material Design的使用 ------btn2
 
-- Material Design的使用
+### 3.存储----btn3
+
+- 简单的文本存储
+
+
 
