@@ -3,12 +3,10 @@ package com.candice.kotlindemo.activity.complicatedwidget
 import android.content.Context
 import android.content.Intent
 import android.os.Environment
-import android.text.TextUtils
 import com.candice.kotlindemo.R
 import com.candice.kotlindemo.base.BaseActivity
+import com.candice.kotlindemo.util.*
 import kotlinx.android.synthetic.main.activity_storage.*
-import org.jetbrains.anko.toast
-import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -40,19 +38,28 @@ class StorageActivity : BaseActivity() {
         //保存
         btn_save.setOnClickListener {
             //保存文本
-            val content = input.text.toString()
-            if (TextUtils.isEmpty(content)) {
-                toast("输入的内容不能为空")
-            } else {
-                File(path).writeText(content)
-                toast("保存成功")
-            }
-
+//            val content = input.text.toString()
+//            if (TextUtils.isEmpty(content)) {
+//                toast("输入的内容不能为空")
+//            } else {
+//                File(path).writeText(content)
+//                toast("保存成功")
+//            }
+            //保存图片
+            val drawable = resources.getDrawable(R.drawable.cartoon)
+            val bitmap = drawable.drawableToBitmap()
+            "$dir/cartoon.jepg".saveImage(bitmap)
         }
         //读取
         btn_read.setOnClickListener {
-            val readText = File(path).readText()
-            tv_read.text = "path：$path;保存的信息是：$readText"
+//            val readText = File(path).readText()
+//            tv_read.text = "path：$path;保存的信息是：$readText"
+            tv_read.text = "图片路径：$dir/cartoon.jepg"
+            //读取图片
+            val readImgByBytes = "$dir/cartoon.jepg".readImgByBytes()
+            val readImgByStream = "$dir/cartoon.jepg".readImgByStream()
+            val readImgByFile = "$dir/cartoon.jepg".readImgByFile()
+            iv_read.setImageBitmap(readImgByFile)
         }
     }
 
@@ -67,7 +74,7 @@ class StorageActivity : BaseActivity() {
 
     override fun initData() {
         dir = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString()
-        val dateFormat = SimpleDateFormat("yyyyMMdd HH:mm:ss")
+        val dateFormat = SimpleDateFormat("yyyyMMdd")
         currentTime = dateFormat.format(Date())
     }
 
