@@ -4,7 +4,7 @@ package com.candice.kotlindemo.util
  * <br>
  * function:
  * <p>
- * @author:Lei
+ * @author:Lyt
  * @date:2019/1/16 下午3:46
  * @since:V$VERSION
  * @desc:com.candice.kotlindemo.util

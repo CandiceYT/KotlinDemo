@@ -16,6 +16,8 @@ import com.candice.kotlindemo.activity.complicatedwidget.StorageActivity
 import com.candice.kotlindemo.activity.complicatedwidget.ViewListActivity
 import com.candice.kotlindemo.activity.login.LoginActivity
 import com.candice.kotlindemo.base.BaseActivity
+import com.candice.kotlindemo.base.DemoApplication
+import com.candice.kotlindemo.util.dip2px
 import com.candice.kotlindemo.widget.LinearItemDecoration
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.alert
@@ -93,6 +95,8 @@ class RVAdapter(val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHo
         val content = data[p1]
         if (p0 is RVViewHolder) {
             p0.tvItem.text = content
+//            p0.tvItem.textSize = 15f.dip2px(DemoApplication.getInstance().applicationContext).toFloat()
+            p0.tvItem.textSize = 15f.dip2px(DemoApplication.instance().applicationContext).toFloat()
             p0.tvItem.setOnClickListener {
                 when (p1) {
                     //登录页面
